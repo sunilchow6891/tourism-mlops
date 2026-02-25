@@ -1,10 +1,8 @@
-yaml_content = """
 name: Tourism Project Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   mlops-pipeline:
@@ -22,16 +20,18 @@ jobs:
         run: |
           pip install pandas scikit-learn huggingface_hub joblib streamlit
 
-      - name: Run Pipeline Scripts
+      - name: Sync to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # This triggers the scripts we wrote in Steps 1-4
-          # Note: In a real repo, you would save those code blocks as .py files
-          echo "Automating Model Training and Deployment..."
-"""
-
-with open("tourism_project/.github/workflows/pipeline.yml", "w") as f:
-    f.write(yaml_content)
-    
-print("pipeline.yml has been created successfully.")
+          # Use Python to push files to your Space
+          python -c "
+          from huggingface_hub import HfApi
+          api = HfApi()
+          # Replace 'sunchow/tourism-app' with your actual Space ID
+          api.upload_folder(
+              folder_path='.',
+              repo_id='sunchow/tourism-app',
+              repo_type='space',
+              token='${{ secrets.HF_TOKEN }}'
+          )"
