@@ -45,9 +45,9 @@ with col3:
 # EXACT COLUMN ORDER FROM DATA DICTIONARY
 feature_cols = [
     'Age', 'TypeofContact', 'CityTier', 'DurationOfPitch', 'Occupation',
-    'Gender', 'NumberOfPersonVisiting', 'PreferredPropertyStar', 'MaritalStatus',
-    'NumberOfTrips', 'Passport', 'OwnCar', 'NumberOfChildrenVisiting',
-    'Designation', 'MonthlyIncome', 'PitchSatisfactionScore',
+    'Gender', 'NumberOfPersonVisiting', 'PreferredPropertyStar', 'MaritalStatus', 
+    'NumberOfTrips', 'Passport', 'OwnCar', 'NumberOfChildrenVisiting', 
+    'Designation', 'MonthlyIncome', 'PitchSatisfactionScore', 
     'ProductPitched', 'NumberOfFollowups'
 ]
 
