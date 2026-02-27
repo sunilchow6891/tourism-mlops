@@ -5,7 +5,7 @@ import joblib
 from huggingface_hub import hf_hub_download
 
 # Configuration
-USER_NAME = "sunchow" 
+USER_NAME = "sunchow"
 MODEL_REPO = f"{USER_NAME}/tourism-model"
 
 @st.cache_resource
@@ -48,17 +48,17 @@ with col3:
 
 features = [
     'Age', 'TypeofContact', 'CityTier', 'DurationOfPitch', 'Occupation',
-    'Gender', 'NumberOfPersonVisiting', 'PreferredPropertyStar', 'MaritalStatus', 
-    'NumberOfTrips', 'Passport', 'OwnCar', 'NumberOfChildrenVisiting', 
-    'Designation', 'MonthlyIncome', 'PitchSatisfactionScore', 
+    'Gender', 'NumberOfPersonVisiting', 'PreferredPropertyStar', 'MaritalStatus',
+    'NumberOfTrips', 'Passport', 'OwnCar', 'NumberOfChildrenVisiting',
+    'Designation', 'MonthlyIncome', 'PitchSatisfactionScore',
     'ProductPitched', 'NumberOfFollowups'
 ]
 
 input_df = pd.DataFrame([[
     age, type_contact, city_tier, pitch_dur, occupation,
-    gender, num_visitors, pref_star, marital, 
-    num_trips, passport, own_car, children, 
-    designation, income, pitch_score, 
+    gender, num_visitors, pref_star, marital,
+    num_trips, passport, own_car, children,
+    designation, income, pitch_score,
     prod_pitched, followups
 ]], columns=features)
 
